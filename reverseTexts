@@ -20,7 +20,7 @@ def ReverseAll(string):
             words = lines[j].split(" ")
             lines[j] = " ".join(Reverse(words))
             #print (lines[j])
-        pages[i] = "\n".join(lines)
+        pages[i] = "\n".join(Reverse(lines))
 
     return "\b".join(Reverse(pages))
 
