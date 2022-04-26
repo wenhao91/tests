@@ -1,0 +1,29 @@
+def Reverse(list_string):
+    l, r = 0, len(list_string)-1
+
+    while l < r:
+        list_string[l], list_string[r] = list_string[r], list_string[l]
+        l += 1
+        r -= 1
+
+    return list_string
+
+def ReverseAll(string):
+    pages = string.split("\b")
+    for i in range(len(pages)):
+        if not pages[i]:
+            continue
+        lines = pages[i].split("\n")
+        for j in range(len(lines)):
+            if not lines[j]:
+                continue
+            words = lines[j].split(" ")
+            lines[j] = " ".join(Reverse(words))
+        Reverse(lines)
+        pages[i] = "\n".join(Reverse(lines))
+
+    return "\b".join(Reverse(pages))
+
+
+x = "the brown fox jumped over the fence\nthe brown bear fell down the hill\n\bThe big lion chased the deer\nThe monkey ate the bananas\n\b"
+print (ReverseAll(x))
