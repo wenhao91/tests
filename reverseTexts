@@ -11,16 +11,16 @@ def Reverse(list_string):
 def ReverseAll(string):
     pages = string.split("\b")
     for i in range(len(pages)):
-        if not pages[i]:
-            continue
+        #if not pages[i]:
+        #    continue
         lines = pages[i].split("\n")
         for j in range(len(lines)):
-            if not lines[j]:
-                continue
+        #    if not lines[j]:
+        #        continue
             words = lines[j].split(" ")
             lines[j] = " ".join(Reverse(words))
-        Reverse(lines)
-        pages[i] = "\n".join(Reverse(lines))
+            #print (lines[j])
+        pages[i] = "\n".join(lines)
 
     return "\b".join(Reverse(pages))
 
